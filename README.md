@@ -87,12 +87,3 @@ If you'd like to contribute to this project, please fork the repository and subm
 ## License
 
 This project is licensed under the MIT License.
-```
-
-### Summary:
-- **Installation**: The README guides users through the installation of necessary Python libraries.
-- **Usage**: Instructions are provided for capturing a screenshot, resizing it, configuring the script, setting color picker locations, and running the automation.
-- **Customization**: Users are informed on how to adjust the configuration variables and set up the color picker to work with their specific setup.
-- **Contributing and License**: Encourages contributions and specifies the project's license.
-
-This `README.md` should be comprehensive and provide all the necessary information for users to install, configure, and run your project.
