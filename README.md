@@ -1,7 +1,7 @@
 # draw-donate-bot
 no injection/executor auto draw bot for draw &amp; donate roblox. (Uses your mouse)
 
-# Automated Image Processing and Color Picking
+## Automated Image Processing and Color Picking
 
 ```markdown
 # Automated Image Processing and Color Picking
@@ -12,7 +12,6 @@ This project automates the process of identifying and resizing specific areas wi
 
 To get started, you'll need to install the following Python libraries:
 
-```bash
 pip install pillow
 pip install pyautogui
 pip install autoit
