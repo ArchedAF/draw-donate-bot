@@ -14,7 +14,7 @@ To get started, you'll need to install the following Python libraries:
 
 pip install pillow
 pip install pyautogui
-pip install autoit
+pip install PyAutoIt
 pip install keyboard
 ```
 
