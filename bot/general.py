@@ -22,6 +22,9 @@ DELETE_DELAY = 2
 IMAGE_RESIZE_METHOD = Image.BOX
 SCREENSHOT_INTERVAL = 1
 
+# Pause/continue toggle
+paused = False
+
 def is_white_pixel(r, g, b, threshold=200):
     return r > threshold and g > threshold and b > threshold
 
@@ -95,7 +98,9 @@ def change_color(color_code, color_picker_position=COLOR_PICKER_POSITION,
     autoit.mouse_click("left", color_change_tab[0], color_change_tab[1], clicks=2)
     time.sleep(CLICK_DELAY)
 
-    # Delete the existing content
+    # Select all existing content and delete it
+    autoit.send("^a")  # Ctrl + A to select all
+    time.sleep(0.5)
     autoit.send("{DEL}")
     time.sleep(DELETE_DELAY)
 
@@ -136,6 +141,16 @@ def draw_image_on_canvas(borders, prepared_image, grid_size=GRID_SIZE):
     for color_code, positions in color_positions.items():
         change_color(color_code)
         for pos in positions:
+            global paused
+            while paused:  # Wait if paused
+                if keyboard.is_pressed('p'):
+                    paused = False
+                    print("Resuming process...")
+                    time.sleep(0.5)
+            if keyboard.is_pressed('p'):
+                paused = True
+                print("Pausing process...")
+                time.sleep(0.5)
             if keyboard.is_pressed('q'):  # Stop if 'Q' is pressed
                 print("Process stopped by user.")
                 return
